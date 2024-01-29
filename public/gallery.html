@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery Page</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <style>
+    body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f9fa;
+    color: #333;
+}
+
+header {
+    background-color: #007bff;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+}
+
+header h1 {
+    margin: 0;
+}
+
+main.gallery-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 20px;
+}
+
+.gallery-item {
+    margin: 10px;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+.gallery-item:hover {
+    transform: scale(1.1);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+}
+
+footer {
+    text-align: center;
+    padding: 10px 0;
+    background-color: #333;
+    color: #fff;
+}
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Photo Gallery</h1>
+    </header>
+
+    <main class="gallery-container">
+        <div class="gallery-item">
+            <img src="/assets/carmain.png" alt="Image 1">
+        </div>
+        <div class="gallery-item">
+            <img src="/assets/image1.png" alt="Image 2">
+        </div>
+        <div class="gallery-item">
+            <img src="/assets/carmain.png" alt="Image 3">
+        </div>
+        <div class="gallery-item">
+            <img src="/assets/carmain.png" alt="Image 4">
+        </div>
+        <div class="gallery-item">
+            <img src="/assets/secbg.png" alt="Image 5">
+        </div>
+        
+    </main>
+
+    <footer>
+        <h2><b><p>&copy; 2023 Your Website. All rights reserved.</p></b></h2>
+    </footer>
+
+</body>
+</html>

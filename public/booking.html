@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Taxi Booking Form</title>
+<!-- <link rel="stylesheet" href="/css/booking.css"> -->
+<link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+<script src="/js/script.js"></script>
+<!-- <script src="https://www.gstatic.com/firebasejs/9.0.2/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.0.2/firebase-firestore.js"></script> -->
+<style>
+  body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color:rgb(254, 254, 254);
+    color: #333;
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: .7;
+
+}
+
+
+#bookingForm {
+    max-width: 500px; 
+    margin: 50px auto; 
+    background-color:rgba(255, 2, 2, 0.347);
+    border-radius: 20px;
+    box-shadow: 0 0 20px rgba(24, 44, 157, 0.927);
+    padding: 20px;
+    opacity: 10;
+    text-align: center;
+    animation: fadeIn 0.8s ease-in-out;
+    box-shadow: 1px 1px 20px rgba(213, 41, 41, 2);
+}
+label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: .6rem;
+    border-radius: 20px;
+    margin-bottom: 5px;
+}
+
+select {
+    max-width: 500px;
+    padding: 13px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    background-color: rgb(245, 176, 176);
+}
+
+#bookingForm:hover{
+    transition: all .6s ease-in-out;
+    transform: scale(1.02);
+    cursor: pointer;
+    box-shadow: 0 0 30px rgba(15, 8, 209, 1); 
+    
+
+}
+
+
+h2 {
+    color: #002cee;
+    margin-bottom: 20px;
+    letter-spacing: .5px;
+    font-weight: bold;
+    font-size: 3em;
+    font-weight: bolder;
+    line-height: 1.2;
+    
+    
+}
+
+form {
+    display: grid;
+    grid-gap: 15px;
+}
+
+label {
+    display: flex;
+    margin-bottom: 8px;
+    color: #7b0f0f;
+    font-weight: bold;
+    font-size: 1.2em;
+
+
+}
+
+input {
+    width: 100%;
+    padding: 12px;
+    box-shadow: 0 0 10px rgba(28, 41, 41, 1);
+    box-sizing: border-box;
+    border: 3px solid #191818;
+    border-radius: 10px;
+    transition: border-color 0.3s ease-in-out;
+    opacity:.5;
+    background-color: rgb(254, 254, 254);
+
+}
+
+input:focus {
+    border-color: #1177ed;
+    
+}
+::placeholder{
+    color: #000000;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.5;
+    opacity: 1;
+
+
+}
+
+#button {
+    opacity:100;
+    background-color: #091fe0e1;
+    color: #ede8e8;
+    padding: 12px 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+    text-align: center;
+    letter-spacing: .1em;
+    text-decoration: none;
+    z-index: 1;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+    box-shadow: 1px 1px 10px rgb(248, 11, 248);
+}
+
+#button:hover {
+    background-color: #000000;
+}
+
+#map {
+    height: 200px;
+    margin-top: 20px;
+    border: 1px solid #ff0000;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+.fadeIn {
+    animation: fadeIn 1s;
+    }
+
+
+</style>
+
+</head>
+<body>
+  <div id="bookingForm">
+    <h2>Book a Taxi</h2>
+    <form id="taxiBooking" onsubmit="bookdata(event)" method="post" action="/submitBooking">
+      <label for="pickupLocation"><b>Pickup Location:</b></label>
+      <input type="text" id="pickupLocation" name="pickupLocation" placeholder="Enter your current address.." required>
+    
+      <label for="destination"><b>Destination:</b></label>
+      <input type="text" id="destination" name="destination" placeholder="Enter your destination address.." required>
+    
+      <label for="date"><b>Date:</b></label>
+      <input type="date" id="date" name="date" required>
+    
+      <input type="hidden" id="distance" name="distance">
+    
+      <label for="time"><b>Time:</b></label>
+      <input type="time" id="time" name="time" required>
+    
+      <label for="numPersons"><b>Number of Persons:</b></label>
+      <input type="number" id="numPersons" name="numPersons" min="1" placeholder="Number of passengers to Travel." required>
+    
+      <label for="vehicleType">Choose a Vehicle:</label>
+      <select id="vehicleType" name="vehicleType">
+        <option value="auto">Auto Rickshaw</option>
+        <option value="car">Mini Car</option>
+        <option value="bike">Prime Sedan</option>
+      </select>
+    
+      <input type="submit" id="button" value="BOOK A TAXI">
+      <div id="totalCostDiv" style="display:none;">
+        <h2>Total Cost</h2>
+        <p id="totalCost"></p>
+      </div>
+    </form>
+    
+        <div id="map" style="height: 400px;"></div>
+     </div>
+  <button onclick="getLocation()">Get My Location</button>
+  <script src="/js/datapassen.js" type="module"></script>
+  <script src="/js/booking.js"></script>
+</body>
+</html>
+

@@ -1,0 +1,338 @@
+<!--<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign-up</title>
+    <link rel="stylesheet" href="./sign_in.css">
+    <script src="https://www.gstatic.com/firebasejs/10.7.2/firebase-app.js"></script> 
+    <script src="https://www.gstatic.com/firebasejs/10.7.2/firebase-auth.js"></script>
+           <script src="https://www.gstatic.com/firebasejs/10.7.2/firebase-ui-auth.js"></script>
+</head>
+<body>
+    <form id="signupForm" >
+        <div class="logo"><img src="/images/unnamed (1).png" alt="" height="150px" width="300px"></div> -->
+        <!-- <label for="Name"></label>
+        <input type="text" id="name" required placeholder="Name"> -->
+<!-- 
+        <label for="Contact"></label>
+        <input type="email" id="Contact" required placeholder="E-mail" class="email">
+        <label for="newPassword"></label>
+        <input type="password" id="newPassword" required placeholder="Enter Password" class="password">
+        <button type="button" id="button1" class="btn">SIGN UP</button>
+        <div class="signin">
+            <a href="signin.html">Already a user ? Sign in now</a></div>
+    </form> -->
+    <!-- <script>
+        // document.getElementById('button1').addEventListener('click', function() {
+        //   window.location.href = 'signin.html';
+        // });
+      </script> -->
+      <!-- <script type="module"> -->
+        <!-- // Import the functions you need from the SDKs you need
+        // import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.2/firebase-app.js";
+        // import {getAuth,createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.7.2/firebase-auth.js"
+        // TODO: Add SDKs for Firebase products that you want to use
+        // https://firebase.google.com/docs/web/setup#available-libraries
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.2/firebase-app.js";
+import "https://www.gstatic.com/firebasejs/10.7.2/firebase-auth.js";
+        // Your web app's Firebase configuration
+        const firebaseConfig = {
+          apiKey: "AIzaSyAne_5yqDgav8ME45UpMWgbhUTTel_",
+          authDomain: "a-cab-booking-site.firebaseapp.com",
+          databaseURL: "https://a-cab-booking-site-default-rtdb.firebaseio.com",
+          projectId: "a-cab-booking-site",
+          storageBucket: "a-cab-booking-site.appspot.com",
+          messagingSenderId: "461329956746",
+          appId: "1:461329956746:web:a529820679a2428173d273"
+        };
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const auth=getAuth(app);
+        console.log(auth);
+        //laaad
+var email = document.getElementById('Contact').value;
+var password = document.getElementById('newPassword').value;
+console.log(email+" "+password)
+document.querySelector('.btn').addEventListener('click',authCreateAccount)
+function authCreateAccount(){
+  createUserWithEmailAndPassword(auth, email, password)
+  .then((userCredential) => {
+    // Signed up 
+    const user = userCredential.user;
+    // ...
+    alert('hello')
+  })
+  .catch((error) => {
+    const errorCode = error.code;
+    const errorMessage = error.message;
+    // ..
+  }); -->
+<!-- } -->
+<!-- 
+      </script>
+       <script src="./mail.js" type="module"></script> -->
+      <!-- </body> -->
+      <!-- </html> -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign-up</title>
+    <!-- <link rel="stylesheet" href="/css/sign_in.css"> -->
+    <!-- <script src="https://www.gstatic.com/firebasejs/10.7.2/firebase-app.js"></script> -->
+    <!-- <script src="https://www.gstatic.com/firebasejs/10.7.2/firebase-auth.js"></script> -->
+    <!-- Update the URL or include a local copy for firebase-ui-auth.js -->
+    <!-- <script src="https://www.gstatic.com/firebasejs/10.7.2/firebase-ui-auth.js"></script> -->
+  <style>
+    body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+    margin: 0;
+    padding: 10vw;
+    background-color:#ffc61a;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+form{
+    background-size: 20px;
+    display: flex;
+    padding: 20vw;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color:rgba(34, 0, 255, 0.052);
+    width: .8rem;
+    height: 25vh;
+    text-align: left;
+    background-color: black;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 500px;
+}
+
+form h1{
+    /* background: url(/assets/unnamed (1).png); */
+}
+
+input{
+    margin: 5px 0;
+    padding: 50px;
+    outline: none;
+    width: 250px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    cursor: pointer;
+    background-color: rgb(255, 255, 255);
+    font-family: sans-serif;
+    font-size:10px;
+    display: block;
+    float: left;
+    margin-left: auto;
+    margin-right: auto;
+    height: 200px;
+    margin-top: 10px;
+    padding: 2.5em;
+    margin:15px;
+}
+#button1{
+    padding: 10px;
+    cursor: pointer;
+    background-color:#ff0000;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 1em;
+    color: #ffffff;
+    border: none;
+    letter-spacing: 2px;
+    font-weight: bold;
+    width: 250px;
+    margin-top: 50px;
+}
+.signin{
+    color: #ff0606;
+    width: 250px;
+    text-decoration: underline whitesmoke 1px;
+    text-underline-offset:4px;
+    font-family: sans-serif;
+    font-size: 15px;
+    margin-left: -55px;
+    margin-top: 15px;
+}
+a{
+  color: #b62727;
+}
+.logo{
+    margin-top: -100px;
+    margin-bottom: 10px;
+}
+input:hover{
+    background-color: #ffffff;
+    transition: .5s;
+}
+#button1:hover{
+    background-color: #008000;
+    transition: .4s;
+    transform:scale(1.2)
+}
+.signin:hover{
+    text-decoration: underline whitesmoke 1px;
+    text-underline-offset: 3px;
+    transition: .5s;
+}
+@media only screen and (max-width: 700px) {
+    form {
+        width: 95%;
+    }
+
+    button {
+        width: 70%;
+    }
+
+    html {
+        font-size: 50%;
+    }
+
+    label {
+        font-size: 1em;
+    }
+
+    form {
+        width: 90%;
+    }
+
+    button {
+        width: 70%;
+    }
+}
+  </style>
+  </head>
+<body>
+    <form id="signupForm" >
+      <div class="logo"><img src="/assets/carmain.png"alt="image of car " height="150px" width="300px"></div>
+        <!-- Your form content here -->
+        <label for="Contact"></label>
+        <input type="email" id="Contact" required placeholder="E-mail" class="email">
+
+        <label for="newPassword"></label>
+        <input type="password" id="newPassword" required placeholder="Enter Password" class="password">
+        <button type="button" id="button1" class="btn">SIGN UP</button>
+        <div class="signin">
+            <a href="/public/signin.html">Already a user? Sign in now</a>
+        </div>
+    </form>
+    <!-- <script src="/js/mail.js"></script> -->
+    <script src="https://www.gstatic.com/firebasejs/7.14.1/firebase-app.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/7.14.1-0/firebase.js&v=RAWHXRTKTHw"></script> -->
+
+    <script type="module">
+       document.getElementById('button1').addEventListener('click', function() {
+          window.location.href = 'signin.html';
+       })
+        // Your Firebase authentication logic here
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.2/firebase-app.js";
+        import{getAuth, createUserWithEmailAndPassword} from "https://www.gstatic.com/firebasejs/10.7.2/firebase-auth.js";
+
+        const firebaseConfig = {
+          apiKey: "AIzaSyAne_5yqDgav8ME45UpMWgbhUTTel_ZUBk",
+          authDomain: "a-cab-booking-site.firebaseapp.com",
+          databaseURL: "https://a-cab-booking-site-default-rtdb.firebaseio.com",
+          projectId: "a-cab-booking-site",
+          storageBucket: "a-cab-booking-site.appspot.com",
+          messagingSenderId: "461329956746",
+          appId: "1:461329956746:web:a529820679a2428173d273"
+        };
+
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth(app);
+        console.log(auth);
+
+        document.querySelector('.btn').addEventListener('click', authCreateAccount);
+
+        function authCreateAccount() {
+          const email = document.getElementById('Contact').value;
+          const password = document.getElementById('newPassword').value;
+
+          createUserWithEmailAndPassword(auth, email, password)
+            .then((userCredential) => {
+              const user = userCredential.user;
+              alert("hi");
+            })
+            .catch((error) => {
+              const errorCode = error.code;
+              const errorMessage = error.message;
+            });
+        }
+        // import {initializeApp} from 'https://www.gstatic.com/firebasejs/10.7.4/firebase-app.js';
+        // import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.7.2/firebase-auth.js";
+
+  //initialise firebase
+// const app=initializeApp(firebaseConfig) 
+// var signupFormDB=firebase.database().ref("signinForm");
+// var signinFormDB = firebase.database().ref("signinForm");
+// var signupFormDB = firebase.database().ref("signupForm");
+// const auth = getAuth(app);
+
+// document.querySelector('.btn').addEventListener('click',authCreateAccout);
+// document.querySelector('.btn').addEventListener('click',()=>{
+//     alert('hello');
+// });
+
+
+
+function authCreateAccout(){
+    const email = document.getElementsByClassName('email').value;
+    const password = document.getElementsByClassName('password').value;
+    console.log(email+" "+password);
+    createUserWithEmailAndPassword(auth, email, password)
+  .then((userCredential) => {
+    // Signed up 
+    const user = userCredential.user;
+    // ...
+    // alert('create')
+    showlogged();
+  })
+  .catch((error) => {
+    const errorCode = error.code;
+    const errorMessage = error.message;
+    // ..
+  });
+
+
+}
+function showlogged(){
+    alert('logged in');
+}
+
+
+document.getElementById('signinForm').addEventListener('submit',submitForm);
+const saveMessage = (Contact, newPassword) => {
+    var newsigninForm = signinFormDB.push();
+    newsigninForm.set({
+        Contact : Contact,
+        Password : newPassword
+
+    });
+};
+
+function submitForm(e){
+    e.preventDefault();
+    var Contact = getElementVal("Contact");
+    var newPassword = getElementVal("newPassword");
+
+    saveMessage(Contact, newPassword);
+}
+const getElementVal = (id) => {
+    return document.getElementById(id).value;
+}
+
+
+
+    </script>
+</body>
+</html>

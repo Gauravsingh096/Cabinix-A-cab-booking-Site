@@ -1,0 +1,124 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+    margin: 0;
+    padding: 10vw;
+    background-color:#ffc61a;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+form{
+    background-size: 20px;
+    display: flex;
+    padding: 20vw;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color:rgba(34, 0, 255, 0.052);
+    width: .8rem;
+    height: 25vh;
+    text-align: left;
+    background-color: black;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 500px;
+}
+
+form h1{
+    background: url(/assets/image1.png);
+}
+
+input{
+    margin: 5px 0;
+    padding: 50px;
+    outline: none;
+    width: 250px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    cursor: pointer;
+    background-color: rgb(255, 255, 255);
+    font-family: sans-serif;
+    font-size:10px;
+    display: block;
+    float: left;
+    margin-left: auto;
+    margin-right: auto;
+    height: 200px;
+    margin-top: 10px;
+    padding: 2.5em;
+    margin:15px;
+}
+#button1{
+    padding: 10px;
+    cursor: pointer;
+    background-color:#ff0000;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 1em;
+    color: #ffffff;
+    border: none;
+    letter-spacing: 2px;
+    font-weight: bold;
+    width: 250px;
+    margin-top: 50px;
+}
+.signin{
+    color: #ff0606;
+    width: 250px;
+    text-decoration: underline whitesmoke 1px;
+    text-underline-offset:4px;
+    font-family: sans-serif;
+    font-size: 15px;
+    margin-left: -55px;
+    margin-top: 15px;
+}
+a{
+  color: #b62727;
+}
+.logo{
+    margin-top: -100px;
+    margin-bottom: 10px;
+}
+input:hover{
+    background-color: #ffffff;
+    transition: .5s;
+}
+#button1:hover{
+    background-color: #008000;
+    transition: .4s;
+    transform:scale(1.2)
+}
+.signin:hover{
+    text-decoration: underline whitesmoke 1px;
+    text-underline-offset: 3px;
+    transition: .5s;
+}
+@media only screen and (max-width: 700px) {
+    form {
+        width: 95%;
+    }
+
+    button {
+        width: 70%;
+    }
+
+    html {
+        font-size: 50%;
+    }
+
+    label {
+        font-size: 1em;
+    }
+
+    form {
+        width: 90%;
+    }
+
+    button {
+        width: 70%;
+    }
+}

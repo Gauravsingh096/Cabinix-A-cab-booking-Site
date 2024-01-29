@@ -1,0 +1,140 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+    margin: 0;
+    padding: 10vw;
+    background-color:#ffc61a;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  
+  form{
+    background-size: 20px;
+    display: flex;
+    padding: 20vw;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color:rgba(34, 0, 255, 0.052);
+    width: .8rem;
+    height: 25vh;
+    text-align: left;
+    background-color: black;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 500px;
+    }
+  
+  .login-form {
+      width: 110%;
+      height: 85%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      background-color:rgba(34, 0, 255, 0.052);
+  
+  }
+  
+  label {
+      margin-bottom: 5px;
+  }
+  
+  input {
+      padding: 10px;
+      opacity: 100;
+      margin-bottom: 15px;
+      border: 1px solid #bd0a0a;
+      border-radius: 4px;
+      box-shadow: 0 0 10px rgba(14, 197, 221, 0.5);
+      outline: none;
+      background: transparent;
+      color: rgb(255, 255, 255);
+      font-family: 'Roboto', sans-serif;
+      font-size: 1rem;
+      font-weight: 300;
+      letter-spacing: 1px;
+      transition: all .3s ease-in-out;
+  
+      
+  }
+  
+  button {
+      background-color: #dcabc1;
+      color: #331abfb7;
+      padding: 10px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 16px;
+      font-weight: 300;
+      width: 40%;
+      display: block;
+  
+  
+  
+      
+  }
+  
+  button:hover {
+      background-color: #c5eeae;
+      
+  }
+  
+  .signup {
+      text-align: center;
+      margin-top: 15px;
+  }
+  
+  .signup p {
+      margin-bottom: 5px;
+  }
+  
+  .signup-btn {
+      text-decoration: none;
+      color: #00ff08;
+      font-weight: bold;
+      font-size: 18px;
+      line-height: 20px;
+      height: 36px;
+      outline: none;
+      border: none;
+      border-radius: 4px;
+      position: relative;
+      overflow: hidden;
+      cursor: pointer;
+  }
+  body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+  }
+  
+  h2 {
+    color: #333;
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+    max-width: 300px;
+  }
+  
+  label {
+    margin-top: 10px;
+  }
+  
+  input {
+    margin-bottom: 10px;
+    padding: 5px;
+  }
+  
+  button {
+    padding: 10px;
+    cursor: pointer;
+  }
+  
+  
